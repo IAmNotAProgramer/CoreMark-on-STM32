@@ -10,34 +10,38 @@ License Information: Dawid dawidsce@gmail.com, Student, LIC=----
 Tool Versions:
 Toolchain:       MDK-Lite  Version: 5.33.0.0
 Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
-C Compiler:      Armcc.exe V5.06 update 7 (build 960)
+C Compiler:      Armcc.exe V5.03 [Build 76]
 Assembler:       Armasm.exe V5.06 update 7 (build 960)
-Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
+Linker/Locator:  ArmLink.exe V5.03.0.76 [Evaluation]
 Library Manager: ArmAr.exe V5.06 update 7 (build 960)
 Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
 CPU DLL:         SARMCM3.DLL V5.33.0.0
-Dialog DLL:      DCM.DLL V1.17.3.0
+Dialog DLL:      DCM.DLL V1.10.0.0
 Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.8.0
-Dialog DLL:      TCM.DLL V1.48.0.0
+Dialog DLL:      TCM.DLL V1.14.1.0
  
 <h2>Project:</h2>
 C:\Users\dawid\Documents\GitHub\CoreMark-on-STM32\CoreMark\MDK-ARM\CoreMark.uvprojx
-Project File Date:  03/02/2021
+Project File Date:  03/14/2021
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+*** Using Compiler 'V5.03 [Build 76]', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'CoreMark'
-compiling stm32f4xx_it.c...
-compiling stm32f4xx_hal_msp.c...
-compiling main.c...
-../Core/Src/main.c(110): warning:  #940-D: missing return statement at end of non-void function "main_init" 
-  }
-../Core/Src/main.c: 1 warning, 0 errors
+compiling core_util.c...
+compiling core_state.c...
+compiling core_list_join.c...
+..\Core\Src\CoreMark\core_list_join.c(167): warning: C4017W: info may be used before being set
+    list_data  info;
+..\Core\Src\CoreMark\core_list_join.c(264): warning: C4017W: info may be used before being set
+    list_data  info;
+..\Core\Src\CoreMark\core_list_join.c: 2 warnings, 0 errors
+compiling core_main.c...
+compiling core_matrix.c...
 compiling core_portme.c...
 linking...
-Program Size: Code=12952 RO-data=800 RW-data=148 ZI-data=8260  
+Program Size: Code=13448 RO-data=752 RW-data=152 ZI-data=8256  
 FromELF: creating hex file...
-"CoreMark\CoreMark.axf" - 0 Error(s), 1 Warning(s).
+"CoreMark\CoreMark.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -61,7 +65,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.4.0
       Include file:  CMSIS\Core\Include\tz_context.h
-Build Time Elapsed:  00:00:05
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>
