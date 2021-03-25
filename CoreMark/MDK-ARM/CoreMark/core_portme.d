@@ -4,6 +4,8 @@ coremark\core_portme.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 coremark\core_portme.o: ..\Core\Src\CoreMark\coremark.h
 coremark\core_portme.o: ../Core/Inc/core_portme.h
 coremark\core_portme.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h
+coremark\core_portme.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\cstdint
+coremark\core_portme.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 coremark\core_portme.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 coremark\core_portme.o: ../Core/Inc/stm32f4xx_hal_conf.h
 coremark\core_portme.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h

@@ -84,7 +84,7 @@ ee_s32 get_seed_32(int i);
 #if (MEM_METHOD == MEM_STATIC)
 ee_u8 static_memblk[TOTAL_DATA_SIZE];
 #endif
-char *mem_name[3] = { "Static", "Heap", "Stack" };
+const char *mem_name[3] = { "Static", "Heap", "Stack" };
 /* Function: main
         Main entry routine for the benchmark.
         This function is responsible for the following steps:
@@ -106,13 +106,15 @@ char *mem_name[3] = { "Static", "Heap", "Stack" };
 
 #if MAIN_HAS_NOARGC
 MAIN_RETURN_TYPE
-main(void)
+
+core_main(void)
 {
     int   argc = 0;
     char *argv[1];
 #else
 MAIN_RETURN_TYPE
-main(int argc, char *argv[])
+	
+core_main(int argc, char *argv[])
 {
 #endif
     ee_u16       i, j = 0, num_algorithms = 0;
@@ -221,7 +223,7 @@ for (i = 0; i < MULTITHREAD; i++)
         if (results[i].execs & ID_LIST)
         {
             results[i].list = core_list_init(
-                results[0].size, results[i].memblock[1], results[i].seed1);
+                results[0].size, (list_head *)results[i].memblock[1], results[i].seed1);
         }
         if (results[i].execs & ID_MATRIX)
         {
@@ -234,7 +236,7 @@ for (i = 0; i < MULTITHREAD; i++)
         if (results[i].execs & ID_STATE)
         {
             core_init_state(
-                results[0].size, results[i].seed1, results[i].memblock[3]);
+                results[0].size, results[i].seed1, (ee_u8*)results[i].memblock[3]);
         }
     }
 

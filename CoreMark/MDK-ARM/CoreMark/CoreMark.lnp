@@ -9,6 +9,7 @@
 "coremark\main.o"
 "coremark\stm32f4xx_it.o"
 "coremark\stm32f4xx_hal_msp.o"
+"coremark\ee_printf.o"
 "coremark\stm32f4xx_hal_tim.o"
 "coremark\stm32f4xx_hal_tim_ex.o"
 "coremark\stm32f4xx_hal_uart.o"

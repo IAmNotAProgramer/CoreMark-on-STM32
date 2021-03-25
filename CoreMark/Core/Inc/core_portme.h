@@ -49,21 +49,26 @@ Original Author: Shay Gal-on
         Define to 1 if the platform has stdio.h.
 */
 #ifndef HAS_STDIO
-#define HAS_STDIO 1
+#define HAS_STDIO 0
 #endif
 /* Configuration : HAS_PRINTF
         Define to 1 if the platform has stdio.h and implements the printf
    function.
 */
 #ifndef HAS_PRINTF
-#define HAS_PRINTF 1
+#define HAS_PRINTF 0
 #endif
 
 /* Configuration : CORE_TICKS
         Define type of return from the timing functions.
  */
 #include <time.h>
+#include <cstdint>
+
 typedef clock_t CORE_TICKS;
+
+int ee_printf(const char *fmt, ...);
+
 
 /* Definitions : COMPILER_VERSION, COMPILER_FLAGS, MEM_LOCATION
         Initialize these strings per platform
@@ -103,7 +108,7 @@ typedef size_t         ee_size_t;
         This macro is used to align an offset to point to a 32b value. It is
    used in the Matrix algorithm to initialize the input memory blocks.
 */
-#define align_mem(x) (void *)(4 + (((ee_ptr_int)(x)-1) & ~3))
+#define align_mem(x) (void *)(4 + (((uintptr_t)(x)-1) & ~3))
 
 /* Configuration : SEED_METHOD
         Defines method to get seed values that cannot be computed at compile
@@ -166,7 +171,7 @@ typedef size_t         ee_size_t;
    greater then 1.
 */
 #ifndef MAIN_HAS_NOARGC
-#define MAIN_HAS_NOARGC 0
+#define MAIN_HAS_NOARGC 1
 #endif
 
 /* Configuration : MAIN_HAS_NORETURN

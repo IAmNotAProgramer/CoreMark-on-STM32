@@ -23,6 +23,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
+//#include "coremark.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -69,10 +70,11 @@ static void MX_USART2_UART_Init(void);
   * @brief  The application entry point.
   * @retval int
   */
-int main_init(void)
+int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+	
+	
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -95,7 +97,9 @@ int main_init(void)
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-	
+	printf("Hello world = %0.3f \r\n",a);
+	HAL_Delay(100);
+	core_main();
   /* USER CODE END 2 */
 
   /* Infinite loop */

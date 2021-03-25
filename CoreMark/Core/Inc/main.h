@@ -54,7 +54,8 @@ extern "C" {
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
-int main_init(void);
+//int core_main(void)
+//int main_init(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
